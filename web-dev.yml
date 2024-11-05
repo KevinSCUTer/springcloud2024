@@ -1,0 +1,30 @@
+server:
+  port: 9106
+spring:
+  application:
+    name: myshop-web
+  datasource:
+    url: jdbc:mysql://localhost:3306/springcloud?characterEncoding=UTF8&useSSL=false&allowPublicKeyRetrieval=true
+    # url: jdbc:mysql://192.168.101.65:3306/springcloud?characterEncoding=UTF8&useSSL=false
+    # driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    # password: mysql
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    database: mysql
+eureka:
+  client:
+    # fetch-registry: false
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      # defaultZone: http://localhost:8888/eureka
+      defaultZone: http://localhost:8888/eureka
+  instance:
+    preferIpAddress: true
+feign:
+  hystrix:
+    enabled: true # 开启熔断功能
