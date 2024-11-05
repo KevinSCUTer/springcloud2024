@@ -1,0 +1,25 @@
+server:
+  # port: 9101
+  port: 9201
+spring:
+  application:
+    name: myshop-user
+  datasource:
+    url: jdbc:mysql://localhost:3306/springcloud?characterEncoding=UTF8&useSSL=false&allowPublicKeyRetrieval=true
+    # url: jdbc:mysql://192.168.101.65:3306/springcloud?characterEncoding=UTF8&useSSL=false&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    # password: mysql
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    database: mysql
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8888/eureka
+    instance:
+      prefer-ip-address: true
